@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="小農故事">
+    <!-- libraries-->
+    <script type="text/javascript" src="assets/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/semantic-ui/0.9.5/css/semantic.min.css">
+    <script type="text/javascript" src="assets/semantic-ui/0.9.5/js/semantic.min.js"></script>
+    <!-- custom files-->
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>水稻 2017 第一期 | 小農故事</title>
+    <style>
+        .crop {
+            width: 200px;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .crop img {
+            width: 146px;
+            height: 146px;
+        }
+    </style>
+    <script>
+    $(function() {
+
+        var modal = $('#my-modal'), // hold reference to modal
+            modalImg = $('#modal-img'), // hold reference to image in modal
+            modalDesc = $('#modal-desc'); // hold reference to description in modal
+            modalTitle = $('#modal-title'); // hold reference to description in modal
+
+        //give your button an easier class reference
+        $('.show-modal').on('click', function() {
+            var button = $(this);
+
+            modalImg.attr('src', button.data('img'));
+            modalDesc.text(button.data('date'));
+            modalTitle.text(button.data('desc'));
+
+            modal.modal('show');
+        });
+    });
+    </script>
+  </head>
+  <body ng-app="farmers">
+    <div id="wrapper">
+      <nav id="navbar" class="ui menu borderless inverted"><a href="index.html" class="item"><i class="icon left arrow"></i></a>
+        <div class="item">我的生產履歷 - 水稻</div>
+        <div class="right menu">
+          <div class="ui dropdown item">陳幸延<i class="icon triangle down"></i>
+            <div class="menu"><a class="item">我的帳號</a><a class="item">設定</a><a class="item">登出</a></div>
+          </div>
+        </div>
+      </nav>
+      <section id="resume" ng-controller="resume">
+        <div class="picture crop">
+          <div class="ui label ribbon status">未上市</div><img class="crop" src="images/IMAG3141.jpg">
+        </div>
+        <div id="edit" class="ui icon labeled button red"><i class="icon pencil"></i>編輯</div>
+        <div class="info">
+          <div id="title">
+            <h1>水稻
+              <div class="statistics">
+                  <!--
+                <div class="item"><i class="icon star"></i>12 人書籤</div>
+                <div class="item"><i class="icon rss"></i>3 人訂閱</div>
+                  -->
+              </div>
+            </h1>
+          </div>
+          <div class="ui two column stackable grid">
+            <div class="column">
+              <div class="ui divided list">
+                <div class="item duration"><i class="icon empty time"></i>2017 第一期</div>
+                <div class="item level"><i class="icon certificate"></i>無農藥無化肥</div>
+                <div class="item latest"><i class="icon bullhorn"></i>補秧
+                    <!--<div class="ui label teal small">1 天前</div>-->
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui divided list">
+                <div class="item farmer"><i class="icon user"></i>陳幸延</div>
+                <div class="item location"><i class="icon location"></i>宜蘭縣 員山鄉</div>
+                <div class="item schedule"><i class="icon calendar"></i>預定 2017 年 8 月販售</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="updates" class="ui grid">
+          <div class="row">
+            <div class="column">
+              <div class="ui icon labeled button">新增日記<i class="icon add"></i></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <div class="meta">
+                <h2>補秧</h2>
+                <p>2017.04.05</p>
+              </div>
+              <div class="photo">
+                <div class="item show-modal crop" data-date="2017.04.05" data-desc="補秧" data-img="images/IMAG3141.jpg"><img class="crop" src="images/IMAG3141.jpg"><img></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <div class="meta">
+                <h2>撿福壽螺</h2>
+                <p>2017.03.29</p>
+              </div>
+              <div class="photo">
+                <div class="item show-modal crop" data-date="2017.03.29" data-desc="撿福壽螺" data-img="images/IMAG3026.jpg"><img class="crop" src="images/IMAG3026.jpg"><img></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <div class="meta">
+                <h2>插秧</h2>
+                <p>2017.3.20</p>
+              </div>
+              <div class="photo">
+                <div class="item show-modal crop" data-date="2017.03.20" data-desc="插秧" data-img="images/IMAG2965.jpg"><img class="crop" src="images/IMAG2965.jpg"><img></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <div class="meta">
+                <h2>打田</h2>
+                <p>2017.3.12</p>
+              </div>
+              <div class="photo">
+                <div class="item show-modal crop" data-date="2017.03.12" data-desc="打田" data-img="images/IMAG2865.jpg"><img class="crop" src="images/IMAG2865.jpg"><img></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="script">
+    </div>
+    <div class="ui modal" id="my-modal">
+        <i class="close icon"></i>
+        <div class="header" id="modal-title">
+        </div>
+        <div class="image content">
+            <div class="image">
+                <center>
+                <img src="" alt="" id="modal-img" width="600" height="auto">
+                </center>
+            </div>
+            <div class="description">
+                <p id="modal-desc"></p>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
